@@ -1,0 +1,239 @@
+/* === NAVBAR === */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #560000; /* Deep red */
+    padding: 0 32px;
+    height: 60px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo img {
+    height: 42px;
+}
+
+.navbar .nav-text {
+    margin-left: 15px;
+    color: white;
+}
+
+.navbar .text-nav {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.navbar .text-nav-small {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.navbar .nav-list {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .nav-list li {
+    position: relative;
+}
+
+.navbar .nav-list a {
+    text-decoration: none !important;  /* <== No underline */
+    color: white;
+    font-weight: 600;
+    padding: 8px 6px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.navbar .nav-list a:hover {
+    color: #ffb3b3;
+    text-decoration: none !important;  /* <== No underline on hover */
+}
+
+.navbar .nav-list a::after {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 2px;
+    background: #ffb3b3;
+    transition: width 0.3s ease;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.navbar .nav-list a:hover::after {
+    width: 100%;
+}
+
+/* === DROPDOWN === */
+.navbar .nav-list li:hover .dropdown {
+    display: block;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;  /* <== Push dropdown below navbar without overlap */
+    left: 0;
+    background-color: #560000;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    min-width: 220px;
+    z-index: 999;
+}
+
+.navbar .nav-list li {
+    position: relative;
+}
+
+.navbar .nav-list li:hover > .dropdown,
+.navbar .nav-list li .dropdown:hover {
+    display: block;
+}
+
+.dropdown li {
+    padding: 6px 20px;
+    white-space: nowrap;
+}
+
+.dropdown a {
+    color: white;
+    display: block;
+    padding: 6px 0;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease;
+    text-decoration: none !important;  /* <== No underline */
+}
+
+.dropdown a:hover {
+    background-color: #6e0000;
+    color: #ffb3b3;
+    border-radius: 4px;
+    text-decoration: none !important;  /* <== No underline on hover */
+}
+
+/* === MOBILE MENU === */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        background-color: #560000;
+        display: none;
+    }
+
+    .nav-list.active {
+        display: flex;
+    }
+
+    .dropdown {
+        position: static;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 0;
+    }
+
+    .dropdown a {
+        padding: 10px 20px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}
+
+/* === FOOTER === */
+.footer {
+    background-color: #560000;
+    color: white;
+    padding: 30px 20px 10px;
+    font-size: 0.95rem;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-logo img {
+    height: 50px;
+}
+
+.footer-links h3,
+.footer-contact h3 {
+    margin-bottom: 10px;
+    color: white;
+}
+
+.footer-links ul,
+.footer-contact ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links a,
+.footer-contact a {
+    color: white;
+    text-decoration: none !important;
+}
+
+.footer-links a:hover,
+.footer-contact a:hover {
+    text-decoration: underline;
+}
+
+.footer-contact .social-icons-footer a {
+    margin-right: 10px;
+    color: white;
+    font-size: 1.2em;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 15px;
+    border-top: 1px solid #aa2222;
+    font-size: 0.9em;
+}

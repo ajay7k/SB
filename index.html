@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPACE Lab | Space-weather, Plasma & Aeronomy Center for Exploration</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="common.css"> <!-- For Navbar & Footer -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Chart.js & Dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment"></script>
+    
+    <!-- JavaScript Files -->
+    <script src="sw.js" defer></script>
+    <script src="js/proton_flux.js" defer></script>
+    <script src="js/xray_flux.js" defer></script>
+    <script src="kindex.js" defer></script>
+    <!-- <script src="js/navbar.js" defer></script> -->
+    <script src="js/photo_album.js" defer></script>
+    <script src="js/bg-video.js" defer></script>
+    <script src="js/announcement.js" defer></script>
+    
+    <!-- Header & Footer Loader -->
+    <script src="common.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+<div id="navbar-container"></div>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-content slide-in">
+        <div class="hero-logo">
+            <img src="logo/logo.png" alt="SPACEBUD Logo">
+        </div>
+        <!-- <h1 class="hero-title">SPACEBUD</h1> -->
+        <!-- <p class="hero-subtitle">Space-weather, Plasma & Aeronomy Center for Exploration</p> -->
+        <p class="hero-welcome">Welcome!</p>
+        <p class="hero-description">
+            SpaceBud Pvt Ltd is a visionary company at the intersection of space science, 
+            education, technology, and geospatial innovation. Founded with a mission to 
+            transform how communities interact with and benefit from space-based solutions.
+        </p>
+    </div>
+</section>
+
+<section class="goal-section slide-in">
+    <div class="goal-text">
+        <h2>Empowering Education & Outreach</h2>
+        <p>
+            At SpaceBud, we aim to revolutionize STEM education through digital learning tools, academic mentoring, science kits, and hands-on experiences. We build future-ready minds with a strong foundation in space and atmospheric sciences.
+        </p>
+    </div>
+    <img src="img/edu-theme.png" alt="Education and Outreach">
+</section>
+
+<section class="goal-section slide-in">
+    <div class="goal-text">
+        <h2>Advanced Space Weather Forecasting</h2>
+        <p>
+            We deliver real-time space weather monitoring and AI-powered forecasts to protect infrastructure and critical systems. Our services benefit aviation, satellite operators, energy sectors, and defense agencies.
+        </p>
+    </div>
+    <img src="img/space-weather-theme.png" alt="Space Weather">
+</section>
+
+<section class="goal-section slide-in">
+    <div class="goal-text">
+        <h2>Geospatial Innovation</h2>
+        <p>
+            With cutting-edge remote sensing and GIS analytics, SpaceBud empowers sustainable planning, disaster management, environmental conservation, and smart city development across India and beyond.
+        </p>
+    </div>
+    <img src="img/geospatial-theme.png" alt="Geospatial Tech">
+</section>
+
+<section class="goal-section slide-in">
+    <div class="goal-text">
+        <h2>Space Innovation & Technology</h2>
+        <p>
+            From satellite and UAV design to launch services and orbital sustainability, SpaceBud is paving the way for India's leadership in new-age space technology. We build systems for Earth, orbit, and beyond.
+        </p>
+    </div>
+    <img src="img/space-tech-theme.png" alt="Space Technology">
+</section>
+
+<!-- Photo Album -->
+<!-- <div class="photo-album">
+    <img id="photo-slide-1" src="photo_album/space1.jpg" alt="Space Image" class="active">
+    <img id="photo-slide-2" src="photo_album/space2.jpg" alt="Space Image" class="next">
+    
+    Navigation Buttons 
+    <button id="prev-btn" class="nav-btn left">&lt;</button>
+    <button id="next-btn" class="nav-btn right">&gt;</button>
+</div> -->
+
+<!-- Announcements & Publications Container -->
+<!-- <div class="info-section"> -->
+    <!-- Announcements -->
+    <!-- <section class="announcement-container">
+        <h2>News & Announcements</h2>
+        <div class="announcement-box">
+            <ul id="announcement-list">
+                <li>🚀 New research paper on ICME detection published! <a href="#">Read more</a></li>
+                <li>🔭 Upcoming webinar on space weather impacts - March 10th! <a href="#">Register here</a></li>
+                <li>🌞 NOAA data now updates in real-time every minute! <a href="#">Learn more</a></li>
+            </ul>
+        </div>
+    </section> -->
+
+    <!-- Latest Publications -->
+    <!-- <section class="publications-container">
+        <h2>Latest Publications</h2>
+        <div class="publications-box">
+            <ul id="publications-list">
+                <li>📄 "Revealing super-adiabatic features of interplanetary coronal mass ejections at 1 au" - Astronomy & Astrophysics, 2025 <a href="#">Read more</a></li>
+                <li>🛰 "How Geoeffective are Planer and non-Planer Magnetic Structured ICME-sheaths for Earth’s Radiation belts?" - AGU24, 2024 <a href="#">Read more</a></li>
+                <li>⚡ "Anisotropic Heating and Cooling within Interplanetary Coronal Mass Ejection Sheath Plasma" - The Astrophysical Journal, 2024 <a href="#">Read more</a></li>
+                <li>🌍 "Quasi-planar ICME sheath: A cause of the first two-step extreme geomagnetic storm of the 25th solar cycle observed on 23 April 2023" - Advances in Space Research, 2024 <a href="#">Read more</a></li>
+                <li>🌌 "AuroraMag: Twin explorer of asymmetry in aurora and solar wind-magnetosphere coupling" - Advances in Space Research, 2024 <a href="#">Read more</a></li>
+                <li>🔬 "Observation of Kinetic Alfvén Waves inside an Interplanetary Coronal Mass Ejection Magnetic Cloud at 1 au" - The Astrophysical Journal, 2024 <a href="#">Read more</a></li>
+            </ul>          
+        </div>
+    </section>
+</div> -->
+
+    <!-- Real-Time Data Container -->
+    <section class="realtime-charts-container">
+        
+        <!-- Solar Wind Data Section -->
+        <section class="solar-wind-container">
+            
+                <section class="solar-wind-section">
+                    <h2>Real-Time Solar Wind</h2>
+                    <!-- Buttons to Change Time Range -->
+                    <div class="time-range-buttons">
+                        <button id="btn-1day">1 Day</button>
+                        <button id="btn-12hr">12 Hours</button>
+                        <button id="btn-6hr">6 Hours</button>
+                    </div>
+
+                    <!-- Legend -->
+                    <div id="legend-container">
+                        <div class="legend-item"><div class="legend-line bz-line"></div><span id="bz-value">Bz GSM: -- nT</span></div>
+                        <div class="legend-item"><div class="legend-line bt-line"></div><span id="bt-value">Bt: -- nT</span></div>
+                    </div>
+
+                    <!-- Chart -->
+                    <canvas id="solarWindChart"></canvas>
+
+                    <p class="data-source">
+                        &copy <a class="link" href="https://www.swpc.noaa.gov/" target="_blank">NOAA SWPC</a>
+                    </p>
+                </section>
+     
+        </section>
+
+ 
+
+        <!-- Planetary K-Index Data Section -->
+        <section class="k-index-container">
+            
+                <section class="k-index-section">
+                    <h2>Real-Time Planetary K-Index</h2>
+                    <canvas id="kIndexChart"></canvas>
+                    <p class="k-index-data-source">
+                        &copy <a class="link" href="https://www.swpc.noaa.gov/" target="_blank">NOAA SWPC</a>
+                    </p>
+                </section>
+        </section>
+
+
+
+    </section>
+
+
+
+<!-- Footer -->
+<div id="footer-container"></div>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const slideInElements = document.querySelectorAll(".slide-in");
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target); // One-time animation
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        slideInElements.forEach(el => observer.observe(el));
+    });
+</script>
+
+</body>
+</html>
